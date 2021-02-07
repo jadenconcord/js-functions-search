@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+  <main>
+    <header>
+      <input id="header-search" type="text" placeholder="Search" onkeypress="searchKey(this, event)">
+      <button name="button" onclick="submitFunc()">Submit Func</button>
+    </header>
+    <section id="home-search">
+      <h1>Search JavaScript Function</h1>
+      <input id="home-input" type="text" placeholder="Search" autocomplete="off" onkeypress="searchKey(this, event)"><br><br>
+      <button class="b2" onclick="searchQuery('#home-input')">Search</button>
+    </section>
+    <section id="results">
+      Loading...
+      <template>
+        <h2>{title}</h2>
+        <hr>
+        <div class="boxes">
+          {each boxes box}
+          <div class="box" onclick="popup.alert('{box.description}')" tabindex="0">
+            <h3>{box.name}</h3>
+            <p>{box.description}</p>
+            <pre><code>{box.code}</code></pre>
+          </div>
+          {/each}
+        </div>
+      </template>
+    </section>
+  </main>
+
+  <template id="submit-func-template">
+    <h2>Submit a function</h2>
+    <strong class="red">*** This form does not actually do anything ***</strong>
+    {inputText name="name" label="Function Name" placeholder="My Function"/}
+    {inputText name="name" label="What does it do?" placeholder="My function does.."/}
+    {inputTextarea name="code" label="code"}function {/inputTextarea}<br><br>
+    <button onclick="{close}">Submit</button>
+  </template>
+
+  <script src="https://jadenconcord.github.io/a/icejs/0-1/ice.js" charset="utf-8"></script>
+  <script src="https://jadenconcord.github.io/a/shortcutjs/0-9/shortcut.js" charset="utf-8"></script>
+  <script src="js/main.js" charset="utf-8"></script>
+</body>
+
+</html>

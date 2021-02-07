@@ -1,0 +1,83 @@
+@import 'theme';
+@import 'elemental';
+
+header {
+  @include navigator;
+  background: $theme;
+  text-align: center;
+  position: relative;
+  padding: 0.5rem;
+  margin: -3rem -3rem 3rem;
+  height: 53.6px;
+
+  button {
+    position: absolute;
+    right: 0.5rem;
+    top: 0.5rem;
+    margin: 0;
+  }
+
+  input {
+    display: none;
+  }
+}
+
+main {
+  @include content;
+  max-width: 700px;
+  margin: 0 auto;
+  background: $black4;
+  min-height: 100vh;
+  padding: 3rem;
+
+  #home-search {
+    text-align: center;
+    padding: 5rem;
+
+    input {
+      font-size: 24px;
+      width: 600px;
+      max-width: 100%;
+    }
+
+    button {
+      font-size: 20px;
+    }
+  }
+
+  #results {
+    .boxes {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      .box {
+        width: 49%;
+        background: mix($black2, $black3);
+        margin-bottom: 2%;
+        border: $border-width solid $black2;
+        padding: 1rem;
+        border-radius: $radius2;
+
+        pre {
+          code {
+            font-size: 0.7rem !important;
+            height: 100px;
+            overflow: hidden;
+            border-radius: $radius1;
+          }
+        }
+
+        &:hover, &:focus{
+          border-color: $theme2;
+          cursor: pointer;
+          outline: none !important;
+        }
+      }
+    }
+  }
+}
+
+.red {
+  color: $theme-red;
+}
